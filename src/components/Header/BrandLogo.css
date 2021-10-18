@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@600&display=swap');
+
+.header-logo{
+    display: flex;
+    width: 100px;
+}
+
+.header-logo p{
+    font-family: 'Cormorant Unicase', serif;
+}
+
+img{
+    width: 50px;
+}
+

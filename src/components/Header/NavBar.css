@@ -1,0 +1,14 @@
+a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: black;
+}
+
+a:hover{
+    border-bottom: solid 1px black;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}

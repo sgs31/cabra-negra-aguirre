@@ -1,5 +1,5 @@
 import Logo from '../../assets/goat-icon.svg'
-import './BrandLogo.css'
+import './styles/BrandLogo.css'
 
 const BrandLogo = () => {
   return (

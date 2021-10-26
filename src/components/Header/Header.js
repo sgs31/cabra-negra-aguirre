@@ -1,7 +1,7 @@
 import NavBar from "./NavBar";
 import BrandLogo from "./BrandLogo";
 
-import "./Header.css";
+import "./styles/Header.css";
 
 const Header = () => {
   return (

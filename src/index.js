@@ -7,7 +7,7 @@ const App = () => {
     return(
         <div>
             <Header/>
-            <ItemListContainer greeting="Esperando por items"/>
+            <ItemListContainer/>
         </div>
     )
 }

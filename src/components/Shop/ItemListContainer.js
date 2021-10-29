@@ -1,20 +1,25 @@
+import {useState, useEffect} from 'react'
 import ItemCount from './ItemCount'
-import model from '../../assets/model.svg'
+import ItemList from './ItemList'
+import {allProducts} from '../../productsList'
 
+const ItemListContainer = () => {
 
-const ItemListContainer = ({greeting}) => {
-    
-    const itemExample = {
-        productName: 'Vestido Dark Queen',
-        stock: 5,
-        productImg: model
+    useEffect(() => {
+        const promesa = new Promise((resolve, reject) => {
+            setTimeout(resolve(allProducts),2000)
+        });
+
+        promesa.then(data=>setProducts(data))
+    },[])
+
+    const [products, setProducts] = useState();
+        
+        return (
+            <div>
+               <ItemList productos={products}/>
+            </div>
+        )
     }
-    
-    return (
-        <div>
-            <ItemCount itemExample={itemExample}/>
-        </div>
-    )
-}
 
-export default ItemListContainer
+export default ItemListContainer;

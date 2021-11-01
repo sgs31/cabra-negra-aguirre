@@ -1,25 +1,24 @@
-import {useState, useEffect} from 'react'
-import ItemCount from './ItemCount'
-import ItemList from './ItemList'
-import {allProducts} from '../../productsList'
+import { useState, useEffect } from "react";
+import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
+import { allProducts } from "../../productsList";
 
 const ItemListContainer = () => {
+  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
-            setTimeout(resolve(allProducts),2000)
-        });
+  const promesa = new Promise((resolve, reject) => {
+    resolve(allProducts);
+  });
 
-        promesa.then(data=>setProducts(data))
-    },[])
+  useEffect(
+    () => setTimeout(() => promesa.then((data) => setProducts(data)), 2000),
+    []
+  );
 
-    const [products, setProducts] = useState();
-        
-        return (
-            <div>
-               <ItemList productos={products}/>
-            </div>
-        )
-    }
+    return products.length == 0 ? <p>Cargando datos...</p> :
+      <div className="item-list-container">
+        <ItemList productos={products} />
+      </div>
+}
 
 export default ItemListContainer;

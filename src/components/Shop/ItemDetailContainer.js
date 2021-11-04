@@ -1,27 +1,30 @@
-import {useEffect} from 'react'
-import { allProducts } from "../../productsList"
+import {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom'
+import { allProducts } from '../../productsList'
+import ItemDetail from './ItemDetail'
 
-const ItemDetailContainer = ({id}) => {
+const ItemDetailContainer = () => {
     
-    const getItem = id => {
-        return new Promise((resolve, reject)=>{
-        const item = allProducts.find(it => it.id === id)
-        setTimeout(()=>{
+    const [currentProduct, setCurrentProduct] = useState();
+
+    const {id} = useParams();
+
+    const getItem = new Promise((resolve, reject)=>{
+        console.log(id)
+        const item = allProducts.find(it => it.id == id)
             if(item){
+                console.log(item)
                 resolve(item)
             }else{
                 reject('Hubo un problema con encontrar ese producto')
             }
-        },2000)    
-    })};
+        });
 
-    useEffect(()=>{
-        getItem(id)
-    },[])
+    useEffect(() => getItem.then(item => setCurrentProduct(item)),[])
     
-    return (
-        <ItemDetail item={getItem}/>
-    )
+    console.log(currentProduct)
+    return currentProduct!= undefined ? <ItemDetail item={currentProduct}/> : <h1>sigue sin funcionar</h1>
+
 }
 
 export default ItemDetailContainer

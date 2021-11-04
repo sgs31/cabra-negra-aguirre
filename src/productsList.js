@@ -3,6 +3,7 @@ import model from './assets/model.svg'
 export const allProducts = [{
         id: 1,
         productName: 'Vestido Dark Queen',
+        category: "woman",
         stock: 5,
         productImg: model,
         price: 3000
@@ -10,6 +11,7 @@ export const allProducts = [{
 {
     id: 2,
     productName: 'Vestido Viper',
+    category: "woman",
     stock: 2,
     productImg: model,
     price: 2800
@@ -17,6 +19,7 @@ export const allProducts = [{
 {
     id: 3,
     productName: 'Vestido Darkness',
+    category: "woman",
     stock: 12,
     productImg: model,
     price: 1750
@@ -24,6 +27,7 @@ export const allProducts = [{
 ,{
     id: 4,
     productName: 'Vestido Miss Fortune',
+    category: "woman",
     stock: 6,
     productImg: model,
     price: 12000
@@ -31,6 +35,7 @@ export const allProducts = [{
 ,{
     id: 5,
     productName: 'Vestido Drama',
+    category: "man",
     stock: 2,
     productImg: model,
     price: 6000

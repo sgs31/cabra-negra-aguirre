@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom"
 import github from '../../assets/social/github.svg'
 import instagram from '../../assets/social/insta.svg'
 import linkedin from '../../assets/social/in.svg'

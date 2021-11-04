@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './styles/Item.css'
 
 const Item = ({productDetail}) => {
@@ -8,7 +9,7 @@ const Item = ({productDetail}) => {
                 </div>
                 <img src={productDetail.productImg} alt={productDetail.productName} />
                 <span>Stock: {productDetail.stock}</span>
-                <button>Ver detalles</button>
+                <NavLink to={`/item/${productDetail.id}`}><button>Ver detalles</button></NavLink>
             </div>
     )
 }

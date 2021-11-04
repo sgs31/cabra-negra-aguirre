@@ -1,11 +1,9 @@
 .footer{
-    position: absolute;
     width: 100%;
-    height: auto;
-    bottom: 0;
     display: grid;
     grid-template-columns: 25% 50% 25%;
     border-top: 1px solid rgba(0, 0, 0, 0.342);
+    background-color: white;
 }
 
 .footer-brand{
@@ -15,6 +13,11 @@
     align-items: center;
 }
 
-.footer-brand span{
-    font-size: 7.5px;
+.footer-brand img{
+    width: 7em;
+}
+
+.footer-brand p{
+    text-align: center;
+    font-size: 1em;
 }

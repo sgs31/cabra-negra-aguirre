@@ -1,6 +1,7 @@
 .nav-bar{
     display: flex;
     align-items: center;
+    font-size: 2em;
 }
 
 .nav-bar a{

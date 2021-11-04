@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom'
 import Contact from './Contact'
-import BrandLogo from '../Header/BrandLogo'
 import SocialMedia from './SocialMedia'
+import logo from '../../assets/goat-icon.svg'
 import './styles/Footer.css'
 
 const Footer = () => {
@@ -8,8 +9,10 @@ const Footer = () => {
         <footer className="footer">
             <Contact/>
             <div className="footer-brand">
-                <BrandLogo />
-                <span>Copyright 2021 © Agustin Aguirre </span>
+                <NavLink to="/">
+                    <img src={logo} alt="cabra-negra-logo"/>
+                </NavLink>
+                <p>Copyright 2021 © Agustin Aguirre </p>
             </div>
             <SocialMedia/>
         </footer>

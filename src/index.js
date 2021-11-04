@@ -15,7 +15,7 @@ const CabraNegra = () => {
                    <Route path="/" component={ItemListContainer} exact/> 
                 </main>
                 {/* <ItemListContainer/> */}
-            <Footer/>
+                <Footer/>
             </BrowserRouter>
         </>
     )

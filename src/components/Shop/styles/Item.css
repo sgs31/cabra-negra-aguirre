@@ -28,12 +28,12 @@
 }
 
 .item button{
-        background-color:#44c767;
+        background-color:white;
         border-radius:28px;
-        border:0.5px solid #18ab29;
+        border:1px solid black;
         display:inline-block;
         cursor:pointer;
-        color:#ffffff;
+        color:black;
         font-family:Arial;
         font-size:7px;
         padding:3px 3px;
@@ -42,5 +42,7 @@
 }
 
 .item button:hover {
-    background-color:#5cbf2a;
+    position: relative;
+    background-color:#b8c6cc;
+    top: -0.25px;
 }

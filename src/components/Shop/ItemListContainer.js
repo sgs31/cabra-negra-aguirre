@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { allProducts } from "../../productsList";
 
@@ -15,7 +14,7 @@ const ItemListContainer = () => {
     []
   );
 
-    return products.length == 0 ? <p>Cargando datos...</p> :
+    return products.length === 0 ? <p>Cargando datos...</p> :
       <div className="item-list-container">
         <ItemList productos={products} />
       </div>

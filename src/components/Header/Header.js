@@ -7,9 +7,7 @@ const Header = () => {
   return (
     <header>
       <BrandLogo />
-      <div>
-        <NavBar />
-      </div>
+      <NavBar />  
     </header>
   );
 };

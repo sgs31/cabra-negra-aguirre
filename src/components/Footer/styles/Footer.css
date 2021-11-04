@@ -1,0 +1,20 @@
+.footer{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    border-top: 1px solid rgba(0, 0, 0, 0.342);
+}
+
+.footer-brand{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    align-items: center;
+}
+
+.footer-brand span{
+    font-size: 7.5px;
+}

@@ -4,9 +4,17 @@ const ItemDetail = ({item}) => {
     return (
         <div className="item-detail">
             <img src={item.productImg}/>
-            <div>
-                <h2>{item.productName}</h2>
-                <p>{item.stock}</p>
+            <div className="item-detail-description">
+                <div className="item-detail-description-title">
+                    <h1>{item.productName}</h1>
+                </div>
+                <div className="item-detail-description-body">
+                    <span>$ {item.price}</span>
+                    <span>Stock disponible: {item.stock}</span>
+                </div>
+                <div className="item-detail-description-footer">
+                    <button>Agregar al carrito</button>
+                </div>
             </div>
         </div>
     )

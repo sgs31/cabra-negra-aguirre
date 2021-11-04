@@ -22,8 +22,8 @@ const ItemDetailContainer = () => {
 
     useEffect(() => getItem.then(item => setCurrentProduct(item)),[])
     
-    console.log(currentProduct)
-    return currentProduct!= undefined ? <ItemDetail item={currentProduct}/> : <h1>sigue sin funcionar</h1>
+    return currentProduct!= undefined ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
+    
 
 }
 

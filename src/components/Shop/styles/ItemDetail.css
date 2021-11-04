@@ -1,3 +1,35 @@
 .item-detail{
+    width: 100%;
     display: flex;
+}
+
+.item-detail img{
+    width: 60%;
+    height: 500px;
+}
+
+.item-detail-description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-detail-description-title{
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.287);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-detail-description-body{
+    height: 50%;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

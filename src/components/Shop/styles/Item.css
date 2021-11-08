@@ -34,8 +34,9 @@
         display:inline-block;
         cursor:pointer;
         color:black;
-        font-family:Arial;
+        font-family: var(--my-font);
         font-size:1em;
+        font-weight: 900;
         padding:3px 3px;
         width: 10em;
         text-decoration:none; 

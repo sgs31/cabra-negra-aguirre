@@ -10,10 +10,9 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     const getItem = new Promise((resolve, reject)=>{
-        console.log(id)
-        const item = allProducts.find(it => it.id == id)
+        
+        const item = allProducts.find(it => it.id === parseInt(id))
             if(item){
-                console.log(item)
                 resolve(item)
             }else{
                 reject('Hubo un problema con encontrar ese producto')
@@ -22,9 +21,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => getItem.then(item => setCurrentProduct(item)),[])
     
-    return currentProduct!= undefined ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
-    
-
+    return currentProduct!== undefined ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
 }
 
 export default ItemDetailContainer

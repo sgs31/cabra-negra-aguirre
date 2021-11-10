@@ -1,51 +1,40 @@
-import { useReducer } from "react"
+import { useState, useMemo } from "react"
 import CartContext from "./CartContext"
-import CartReducer from "./CartReducer"
-import {ADD_ITEM, REMOVE_ITEM, CLEAR, IS_IN_CART} from './types'
-
 
 const CartState = (props) => {
-    const initialState = {
-        cart: []
-    }
-
-    const [state, dispatch] = useReducer(CartReducer, initialState)
+    
+    const [cart, setCart] = useState([])
 
     const addItem = (item, quantity) => {
-        dispatch({
-            type: ADD_ITEM,
-            payload: {item, quantity}
-        })
+        if(!isInCart(item.id)){
+            setCart([...cart, {product:item, quantity: quantity}])
+        }
     }
 
     const removeItem = (itemId) =>{
-        dispatch({
-            type: REMOVE_ITEM,
-            payload: itemId
-        })
+        setCart([...cart, cart.filter(item => item.product.id !== itemId)])
     }
 
     const clear = () =>{
-        dispatch({
-            type: CLEAR
-        })
+       setCart([])
     }
 
     const isInCart = (itemId) =>{
-        dispatch({
-            type: IS_IN_CART,
-            payload:itemId
-        })
+        return cart.includes(item => item.producto.id === itemId)
     }
 
+    const value = useMemo(() => {
+        return({
+                cart,
+                addItem,
+                removeItem,
+                clear,
+                isInCart
+            })
+    }, [cart])
+
     return (
-        <CartContext.Provider value={{
-            cart: initialState.cart,
-            addItem,
-            removeItem,
-            clear,
-            isInCart
-        }}>
+        <CartContext.Provider value={value}>
             {props.children}
         </CartContext.Provider>
     )

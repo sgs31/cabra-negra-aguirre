@@ -1,0 +1,9 @@
+.cart-widget img{
+    width: 45px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.cart-widget img:hover{
+    cursor: pointer;
+}

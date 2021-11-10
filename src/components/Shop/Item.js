@@ -1,15 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import './styles/Item.css'
-import { useContext } from 'react';
-import CartContext from '../context/cart/CartContext';
 
 const Item = ({productDetail}) => {
-    
-    const {cart} = useContext(CartContext);
-    
+        
     return (
             <div className="item">
-                {console.log(`Ahora mismo esta el cart tiene:`, cart)}
                 <div className='item-tittle'>
                     <h4>{productDetail.productName}</h4>
                 </div>

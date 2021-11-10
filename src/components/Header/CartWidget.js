@@ -1,9 +1,14 @@
 import CartImg from '../../assets/cart-icon.svg'
+import { useHistory } from 'react-router-dom'
+import './styles/CartWidget.css'
 
 const CartWidget = () => {
+    
+    const {push} = useHistory()
+
     return (
-        <div>
-            <img src={CartImg} alt="img-cart" style={{width:45, marginLeft:15, marginRight:15}} />
+        <div className="cart-widget">
+            <img src={CartImg} alt="img-cart" onClick={() => push('/cart')}/>
         </div>
     )
 }

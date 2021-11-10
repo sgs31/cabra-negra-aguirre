@@ -1,15 +1,24 @@
-import ItemCount from './ItemCount';
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import ItemCount from './ItemCount'
+import { useState, useContext} from 'react'
+import { NavLink, useHistory } from 'react-router-dom'
+import CartContext from '../context/cart/CartContext'
 import './styles/ItemDetail.css'
+
 
 const ItemDetail = ({item}) => {
 
-    const [amount, setAmount] = useState(1);
+    const [amount, setAmount] = useState(1)
+    const {addItem} = useContext(CartContext)
+    const {push} = useHistory()
 
-    const onAdd = () => amount < item.stock ? setAmount(amount + 1) : setAmount(amount);
+    const onAdd = () => amount < item.stock ? setAmount(amount + 1) : setAmount(amount)
 
-    const onSub = () => amount <= 1 ? setAmount(amount) : setAmount(amount-1);
+    const onSub = () => amount <= 1 ? setAmount(amount) : setAmount(amount-1)
+
+    const sendToCart = () => {
+        addItem(item, amount)
+        push("/cart")
+    }
 
     return (
         <div className="item-detail">
@@ -24,7 +33,7 @@ const ItemDetail = ({item}) => {
                 </div>
                 <ItemCount initial={amount} onAdd={onAdd} onSub={onSub}/>
                 <div className="item-detail-description-footer">
-                   <NavLink to="/cart"><button>AGREGAR AL CARRITO</button></NavLink> 
+                   <button onClick={sendToCart}>AGREGAR AL CARRITO</button> 
                 </div>
             </div>
         </div>

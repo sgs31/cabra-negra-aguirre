@@ -42,12 +42,16 @@ const CartFilled = ({ cart }) => {
         <div className="cart-filled">
             <div className="cart-filled-list">
                 <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                    </tr>
-                    {cart.map(item => <CartItem key={item.product.id} item={item} />)}
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cart.map(item => <CartItem key={item?.product.id} item={item} />)}
+                    </tbody>
                 </table>
             </div>
             <div className="cart-filled-information">

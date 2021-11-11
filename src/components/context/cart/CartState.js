@@ -12,7 +12,7 @@ const CartState = (props) => {
     }
 
     const removeItem = (itemId) =>{
-        setCart([...cart, cart.filter(item => item.product.id !== itemId)])
+        setCart([ ...cart.filter(item => item.product.id !== itemId) ])
     }
 
     const clear = () =>{

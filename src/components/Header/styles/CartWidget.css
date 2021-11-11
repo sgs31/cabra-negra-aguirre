@@ -7,3 +7,19 @@
 .cart-widget img:hover{
     cursor: pointer;
 }
+
+.cart-widget-quantity{
+    width: 28px;
+    height: 28px;
+    background: rgb(0, 0, 0);
+    color: white;
+    border-radius: 50%;
+    position: relative;
+    z-index: 4;
+    left: 25px;
+    bottom: -5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+

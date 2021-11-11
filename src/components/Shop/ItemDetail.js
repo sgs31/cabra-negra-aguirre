@@ -1,6 +1,6 @@
 import ItemCount from './ItemCount'
 import { useState, useContext} from 'react'
-import { NavLink, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import CartContext from '../context/cart/CartContext'
 import './styles/ItemDetail.css'
 
@@ -31,10 +31,13 @@ const ItemDetail = ({item}) => {
                     <span>$ {item.price}</span>
                     <span>Stock disponible: {item.stock}</span>
                 </div>
-                <ItemCount initial={amount} onAdd={onAdd} onSub={onSub}/>
-                <div className="item-detail-description-footer">
-                   <button onClick={sendToCart}>AGREGAR AL CARRITO</button> 
-                </div>
+                {item.stock !== 0 ? 
+                (<>
+                    <ItemCount initial={amount} onAdd={onAdd} onSub={onSub}/>
+                    <div className="item-detail-description-footer">
+                    <button onClick={sendToCart}>AGREGAR AL CARRITO</button> 
+                    </div>
+                </>) : <span>Sin stock</span>}
             </div>
         </div>
     )

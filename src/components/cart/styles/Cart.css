@@ -13,7 +13,6 @@
 
 .cart-filled{
     width: 100%;
-    border: 1px solid black;
     min-height: 550px;
     max-height: 600px;
     display: flex;
@@ -21,4 +20,48 @@
 
 .cart-filled-list{
     width: 70%;
+    padding-right: 20px;
 }
+
+.cart-filled-list table{
+    width: 100%;
+    padding-top: 25px;
+    
+}
+.cart-filled-list th{
+    font-size: x-large;  
+}
+
+.cart-filled-list table td{
+    text-align: center;    
+}
+
+.cart-filled-information{
+    text-align: left;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: x-large;
+    border: 1px solid rgba(0, 0, 0, 0.445);
+    border-radius: 3%;
+}
+
+.cart-filled-information button{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-style: none;
+    font-family: var(--my-font);
+    font-weight: bold;
+    font-size: x-large;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    position:relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.cart-filled-information button:hover{
+    background-color: rgba(0, 0, 0, 0.13);
+    cursor: pointer;
+}
+        

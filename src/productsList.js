@@ -39,4 +39,11 @@ export const allProducts = [{
     stock: 2,
     productImg: model,
     price: 6000
+},{
+    id: 6,
+    productName: 'Vestido Ashe',
+    category: "man",
+    stock: 0,
+    productImg: model,
+    price: 12000
 }];

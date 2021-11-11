@@ -20,7 +20,8 @@ const CartState = (props) => {
     }
 
     const isInCart = (itemId) =>{
-        return cart.includes(item => item.producto.id === itemId)
+        const itemToFind = cart.find(item => item.product.id === itemId)
+        return itemToFind ? true : false
     }
 
     const value = useMemo(() => {

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext} from "react"
 import { useHistory } from "react-router"
 import CartContext from "../context/cart/CartContext"
 import CartItem from './CartItem'

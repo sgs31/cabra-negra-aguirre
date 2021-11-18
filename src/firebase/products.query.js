@@ -34,7 +34,6 @@ export const getProductById = async (idItem) => {
 
     let ret = "algo";
     
-    /* const query = collection.where("id", "==", id) */
     const query = collection.where("id", "==", idItem)
     const promesa = query.get()
     
@@ -44,8 +43,6 @@ export const getProductById = async (idItem) => {
         })
     })
 
-    console.log("antes de retornar", ret)
-    console.log("y esto", {nombre:"agustin", edad: 1})
     return ret;
 }
 

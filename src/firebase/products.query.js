@@ -30,24 +30,22 @@ export const getProductsByCategory = (category) => {
     return ret
 }
 
-export const getProductById = (idItem) => {
+export const getProductById = async (idItem) => {
 
-    let ret;
+    let ret = "algo";
     
     /* const query = collection.where("id", "==", id) */
     const query = collection.where("id", "==", idItem)
     const promesa = query.get()
-
-    console.log("En la funcion", promesa)
     
-    promesa.then(documento => {
-        documento.docs.map(product => {
-            console.log(product.data())
-            ret = product.data()
+    await promesa.then(res => {
+        res.docs.map(doc => {
+            ret = {...doc.data()}
         })
     })
 
-    setTimeout(()=> console.log("antes de retornar", ret), 1000)
+    console.log("antes de retornar", ret)
+    console.log("y esto", {nombre:"agustin", edad: 1})
     return ret;
 }
 

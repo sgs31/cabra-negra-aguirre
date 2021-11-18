@@ -54,14 +54,23 @@
     font-weight: bold;
     font-size: x-large;
     border: 1px solid rgba(0, 0, 0, 0.438);
-    position:relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
 
 .cart-filled-information button:hover{
     background-color: rgba(0, 0, 0, 0.13);
     cursor: pointer;
+}
+
+@media (max-width: 1000px){
+    .cart-filled-information button{
+        height: 70px;
+    }
+}
+
+@media (max-width: 530px){
+    .cart-filled{
+        display: flex;
+        flex-direction: column;
+    }
 }
         

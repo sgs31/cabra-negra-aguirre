@@ -11,10 +11,10 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         const item = getProductById(id)
-        setCurrentProduct(item)
-        setTimeout(()=>console.log(item), 5000)
+        item.then(res => setCurrentProduct(res))
     },[id])
 
+    console.log(currentProduct)
     return currentProduct ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
 }
 

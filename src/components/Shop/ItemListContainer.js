@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import ItemList from "./ItemList";
-import { allProducts } from "../../productsList";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import ItemList from "./ItemList"
+import {getProducts, getProductsByCategory} from "../../firebase/products.query"
 
 const ItemListContainer = () => {
   
@@ -9,25 +9,15 @@ const ItemListContainer = () => {
 
   const { gender } = useParams();
 
-  const promesa = new Promise((resolve, reject) => {
-    resolve(allProducts);
-  });
+  useEffect(()=>{
+    if(gender){
+      setProducts(getProductsByCategory(gender))
+    }else{
+      setProducts(getProducts())
+    }
+  }, [gender])
 
-  const productFilter = () => setTimeout(() => promesa.then((data) => {
-    if (gender) {
-      const productsToRender = data.filter(
-        (clothe) => clothe.category === gender
-      );
-      setProducts(productsToRender);
-    } else {
-      setProducts(data);
-    }}),2000);
-
-  useEffect(() => productFilter(), [gender]);
-  
-  return products.length === 0 ? (
-    <p>Cargando datos...</p>
-  ) : (
+  return products.length === 0 ? <h1>cargando...</h1> : (
     <div className="item-list-container">
       <ItemList productos={products} />
     </div>

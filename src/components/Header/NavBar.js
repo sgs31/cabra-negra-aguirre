@@ -5,7 +5,7 @@ import "./styles/NavBar.css";
 const NavBar = () => {
   return (
     <nav className="nav-bar">
-      <div>
+      <div className="nav-bar-items">
         <NavLink to="/">Nosotros</NavLink>
         <NavLink to="/shop/man">Hombres</NavLink>
         <NavLink to="/shop/woman">Mujeres</NavLink>

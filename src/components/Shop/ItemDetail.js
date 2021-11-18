@@ -22,10 +22,10 @@ const ItemDetail = ({item}) => {
 
     return (
         <div className="item-detail">
-            <img src={item.productImg} alt={item.productName}/>
+            <img src={item.img} alt={item.name}/>
             <div className="item-detail-description">
                 <div className="item-detail-description-title">
-                    <h1>{item.productName}</h1>
+                    <h1>{item.name}</h1>
                 </div>
                 <div className="item-detail-description-body">
                     <span>$ {item.price}</span>

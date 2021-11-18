@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { allProducts } from '../../productsList'
 import ItemDetail from './ItemDetail'
+import { getProductById } from '../../firebase/products.query'
 
 const ItemDetailContainer = () => {
     
@@ -9,19 +9,13 @@ const ItemDetailContainer = () => {
 
     const {id} = useParams();
 
-    const getItem = new Promise((resolve, reject)=>{
-        
-        const item = allProducts.find(it => it.id === parseInt(id))
-            if(item){
-                resolve(item)
-            }else{
-                reject('Hubo un problema con encontrar ese producto')
-            }
-        });
+    useEffect(() => {
+        const item = getProductById(id)
+        setCurrentProduct(item)
+        setTimeout(()=>console.log(item), 5000)
+    },[id])
 
-    useEffect(() => getItem.then(item => setCurrentProduct(item)),[])
-    
-    return currentProduct!== undefined ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
+    return currentProduct ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
 }
 
 export default ItemDetailContainer

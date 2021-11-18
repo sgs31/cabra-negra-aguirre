@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
 
     return (
         <tr className="cart-item">
-            <td>{item.product.productName}</td>
+            <td>{item.product.name}</td>
             <td>{item.quantity}</td>
             <td>${item.product.price}</td>
             <td>

@@ -1,0 +1,12 @@
+.cart-empty button{
+    border: none;
+    background-color: white;
+    font-family: var(--my-font);
+    font-size: xx-large;
+    border: 0.2px solid rgba(0, 0, 0, 0.301);
+    font-weight: bold;
+}
+
+.cart-empty button:hover{
+    cursor: pointer;
+}

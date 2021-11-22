@@ -2,48 +2,38 @@ import {firestore as db} from "./firebase"
 
 const collection = db.collection("products")
 
-export const getProducts = () => {
-    const ret = []
+export const getProducts = async () => {
 
-    const promesa = collection.get()
-
-    promesa.then(result => {
-        result.docs.map(doc => ret.push(doc.data()))
+    const documents = await collection.get()
+    const documentsCollection = documents.docs
+    const documentsData = documentsCollection.map(doc => {
+        let ret = doc.data()
+        return ret
     })
     
-    return ret
+    return documentsData
 }
 
-export const getProductsByCategory = (category) => {
-    const ret = []
+export const getProductsByCategory = async (category) => {
     
-    const query = collection.where("category", "==", category)
-    let promesa = query.get()
-    
-    promesa.then(resultado => {
-        resultado.docs.map(doc => {
-            const product = {...doc.data()}
-            ret.push(product)
-        })
+    const documents = await collection.where("category", "==", category)
+    const documentsByCategory = await documents.get()
+    const documentsData = documentsByCategory.docs.map(doc => {
+        let ret = doc.data()
+        return ret
     })
 
-    return ret
+    return documentsData
 }
 
 export const getProductById = async (idItem) => {
 
-    let ret = "algo";
-    
-    const query = collection.where("id", "==", idItem)
-    const promesa = query.get()
-    
-    await promesa.then(res => {
-        res.docs.map(doc => {
-            ret = {...doc.data()}
-        })
-    })
+    const query = await collection.where("id", "==", idItem)
+    const product = await query.get()
+    let productData = product.docs.map(doc => doc.data())
+    productData = productData.pop()
 
-    return ret;
+    return productData;
 }
 
 

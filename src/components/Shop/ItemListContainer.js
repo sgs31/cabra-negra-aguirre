@@ -11,9 +11,11 @@ const ItemListContainer = () => {
 
   useEffect(()=>{
     if(gender){
-      setProducts(getProductsByCategory(gender))
+      const collectionProducts = getProductsByCategory(gender)
+      collectionProducts.then(data => setProducts(data))
     }else{
-      setProducts(getProducts())
+      const collectionProducts = getProducts()
+      collectionProducts.then(data => setProducts(data))
     }
   }, [gender])
 

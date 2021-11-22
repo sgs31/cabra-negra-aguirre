@@ -1,16 +1,3 @@
-.empty-cart button{
-    border: none;
-    background-color: white;
-    font-family: var(--my-font);
-    font-size: xx-large;
-    border: 0.2px solid rgba(0, 0, 0, 0.301);
-    font-weight: bold;
-}
-
-.empty-cart button:hover{
-    cursor: pointer;
-}
-
 .cart-filled{
     width: 100%;
     min-height: 550px;
@@ -34,6 +21,20 @@
 
 .cart-filled-list table td{
     text-align: center;    
+}
+
+.cart-filled-list button{
+    width: 60px;
+    height: 30px;
+    border-style: none;
+    color: white;
+    background-color: black;
+    font-family: var(--my-font);
+    font-weight: bold;
+}
+.cart-filled-list button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.726);
 }
 
 .cart-filled-information{

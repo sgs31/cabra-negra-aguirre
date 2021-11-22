@@ -10,11 +10,10 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     useEffect(() => {
-        const item = getProductById(id)
-        item.then(res => setCurrentProduct(res))
+        const product = getProductById(id)
+        product.then(res => setCurrentProduct(res))
     },[id])
 
-    console.log(currentProduct)
     return currentProduct ? <ItemDetail item={currentProduct}/> : <h1>No se encontro producto</h1>
 }
 

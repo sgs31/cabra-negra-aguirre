@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react"
+import { useState} from "react"
 import CartContext from "./CartContext"
 
 const CartState = (props) => {
@@ -24,15 +24,13 @@ const CartState = (props) => {
         return itemToFind ? true : false
     }
 
-    const value = useMemo(() => {
-        return({
-                cart,
-                addItem,
-                removeItem,
-                clear,
-                isInCart
-            })
-    }, [cart])
+    const value = {
+            cart,
+            addItem,
+            removeItem,
+            clear,
+            isInCart
+            }
 
     return (
         <CartContext.Provider value={value}>

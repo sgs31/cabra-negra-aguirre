@@ -1,0 +1,11 @@
+.cart-form{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--my-font);
+}
+
+.cart-form input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}

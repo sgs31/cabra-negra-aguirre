@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import CartItem from './CartItem'
-import {sendOrder} from '../../firebase/orders.query'
+import CartForm from './CartForm'
 import './styles/CartFilled.css'
 
 const CartFilled = ({ cart, util }) => {
@@ -24,7 +24,7 @@ const CartFilled = ({ cart, util }) => {
     }
 
     if(id){
-        return <p>Tu compra ha sido realizada con exito con el id de compra: #{id}</p>
+        return <p>Tu compra ha sido realizada con exito con el id de compra: <b>{id}</b></p>
     }else{
         return (
             <div className="cart-filled">
@@ -47,47 +47,11 @@ const CartFilled = ({ cart, util }) => {
                     <h3>Informacion general</h3>
                     <p>Cantidad de unidades: {units()}</p>
                     <p>Precio total: ${total()}</p>
-                    {showForm && <CartForm data={cart, total} util={setId}/>}
+                    {showForm && <CartForm cart={cart} total={total()} setId={setId} clear={util}/>}
                     <button onClick={()=>finalizarCompra()}>{showForm ? "CANCELAR COMPRA" : "FINALIZAR COMPRA"}</button>
                 </div>
             </div>)
     }
-}
-
-const CartForm = ({data, util }) => {
-
-    const [user, setUser] = useState({
-        name: "",
-        email: "",
-        tel: ""
-      });
-
-    const order = {
-        buyer: user,
-        items: data.cart,
-        total: data.total
-    }
-    
-    const confirmarCompra = (order) => {
-        sendOrder(order)
-        .then(idOrder => util.setId(idOrder))
-    }
-    
-    const handleInputChange = (event) => {
-        setUser({
-          ...user,
-          [event.target.name]: event.target.value
-        })
-      }
-
-    return(
-        <form>
-            <input type="text" placeholder="Nombre" name="name" required onChange={handleInputChange}/>
-            <input type="email" placeholder="Email" name="email" required onChange={handleInputChange}/>
-            <input type="number" placeholder="Numero de contacto" name="tel" required onChange={handleInputChange}/>
-            <button onClick={() => confirmarCompra(order)}>CONFIRMAR COMPRA</button>
-        </form>
-    )
 }
 
 export default CartFilled;

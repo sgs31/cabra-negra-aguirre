@@ -47,7 +47,7 @@ const CartFilled = ({ cart, util }) => {
                     <h3>Informacion general</h3>
                     <p>Cantidad de unidades: {units()}</p>
                     <p>Precio total: ${total()}</p>
-                    {showForm && <CartForm cart={cart} total={total()} setId={setId} clear={util}/>}
+                    {showForm && <CartForm cart={cart} total={total()} setId={setId}/>}
                     <button onClick={()=>finalizarCompra()}>{showForm ? "CANCELAR COMPRA" : "FINALIZAR COMPRA"}</button>
                 </div>
             </div>)

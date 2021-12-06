@@ -21,7 +21,6 @@ const CartForm = ({cart, total, setId, clear}) => {
         if(userNotEmpty){
             const queryToOrder = sendOrder(order)
             queryToOrder.then(orr => setId(orr.id))
-            clear()
         }    
     }
 

@@ -17,18 +17,17 @@ const CartForm = ({cart, total, setId, clear}) => {
     }
     
     const confirmPucharse = (order) => {
-        let userNotEmpty = checkUserIfNotEmpty()
-        if(userNotEmpty){
+        const userEmpty = checkUserIfEmpty(order.buyer)
+        if(!userEmpty){
             const queryToOrder = sendOrder(order)
             queryToOrder.then(orr => setId(orr.id))
-        }    
+        }   
     }
 
-    const checkUserIfNotEmpty = () => {
-        let ret = true;
-        let keysUser = Object.keys(user)
-        for (let key in keysUser){
-            ret = ret && user[key] !== ""
+    const checkUserIfEmpty = (buyer) => {
+        let ret = false;
+        for (let key in buyer){
+            if(user[key] === "") ret = true;
         }
         return ret;
     }
@@ -42,9 +41,9 @@ const CartForm = ({cart, total, setId, clear}) => {
 
     return(
         <div className="cart-form">
-            <input type="text" placeholder="Nombre" name="name" required="required" onChange={handleInputChange}/>
-            <input type="email" placeholder="Email" name="email" required="required" onChange={handleInputChange}/>
-            <input type="number" placeholder="Numero de contacto" name="tel" required="required" onChange={handleInputChange}/>
+            <input type="text" placeholder="Nombre" name="name" required onChange={handleInputChange}/>
+            <input type="email" placeholder="Email" name="email" required onChange={handleInputChange}/>
+            <input type="number" placeholder="Numero de contacto" name="tel" required onChange={handleInputChange}/>
             <button onClick={() => confirmPucharse(order)}>CONFIRMAR COMPRA</button>
         </div>
     )

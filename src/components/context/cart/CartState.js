@@ -24,12 +24,15 @@ const CartState = (props) => {
         return itemToFind ? true : false
     }
 
+    const isEmpty = () => cart.length === 0
+
     const value = {
             cart,
             addItem,
             removeItem,
             clear,
-            isInCart
+            isInCart,
+            isEmpty
             }
 
     return (

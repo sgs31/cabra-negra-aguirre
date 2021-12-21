@@ -1,0 +1,30 @@
+.home{
+    display: flex;
+}
+
+.home-model{
+    width: 100%;
+}
+
+.home-presentation{
+    width: 40%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.home-presentation h1{
+    text-align: justify;
+}
+
+.home-presentation p{
+    text-align: justify;
+}
+
+.home-presentation button{
+    border-style: none;
+    background-color: white;
+    font-family: var(--my-font);
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}

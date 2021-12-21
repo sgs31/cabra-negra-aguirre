@@ -14,19 +14,19 @@
     border-bottom: solid 1px black;
 }
 
-@media (max-width: 922px){
+@media (max-width: 1111px){
     .nav-bar{
         font-size: x-large;
     }
 }
 
-@media (max-width: 763px){
+@media (max-width: 915px){
     .nav-bar{
         font-size: large;
     }
 }
 
-@media (max-width: 640px){
+@media (max-width: 766px){
     .nav-bar-items{
         display: flex;
         flex-direction: column;

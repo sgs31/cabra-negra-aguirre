@@ -10,4 +10,6 @@ Para el desarrollo del curso, elegí un [e-commerce](https://i.imgur.com/dd75L8f
 
 Me dispuse a tratar de modular según la relación entre componentes y todo lo que tenga que ver con el estilo usar css exclusivamente para practicarlos. En otra ocasion y en futuros proyectos a desarrollar, añadire preprocesadores css o algun framework como chakra UI, bootstrap, etc. 
 
+A modo de ejemplo, dejo adjunto un caso de uso en la compra:
 
+![buyer-case-user](https://media.giphy.com/media/CSeFcQQV1kwt7G8tpJ/giphy.gif)

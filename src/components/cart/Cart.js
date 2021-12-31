@@ -7,7 +7,7 @@ const Cart = () => {
 
     const { cart, clear, isEmpty } = useContext(CartContext)
 
-    return isEmpty() ? <CartEmpty /> : <CartFilled cart={cart} util={clear} />
+    return isEmpty() ? <CartEmpty /> : <CartFilled cart={cart} clear={clear} />
 }
 
 export default Cart;

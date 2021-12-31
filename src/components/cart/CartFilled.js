@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import CartItem from './CartItem'
 import CartForm from './CartForm'
+import { useHistory } from 'react-router-dom'
 import './styles/CartFilled.css'
 
-const CartFilled = ({ cart, util }) => {
+const CartFilled = ({ cart, clear }) => {
 
     const [id, setId] = useState()
     const [showForm, setShowForm] = useState(false)
+    const {push} = useHistory()
     
     const units = () => {
         let unitsInCart = 0;
@@ -24,7 +26,9 @@ const CartFilled = ({ cart, util }) => {
     }
 
     if(id){
-        return <p>Tu compra ha sido realizada con exito con el id de compra: <b>{id}</b></p>
+        clear()
+        push(`/scssMs/${id}`)
+        return 0;
     }else{
         return (
             <div className="cart-filled">
@@ -35,7 +39,7 @@ const CartFilled = ({ cart, util }) => {
                                 <th>Nombre</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
-                                <th><button onClick={util}>Limpiar</button></th>
+                                <th><button onClick={clear}>Limpiar</button></th>
                             </tr>
                         </thead>
                         <tbody>

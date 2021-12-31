@@ -8,6 +8,7 @@ import ItemListContainer from './components/Shop/ItemListContainer'
 import ItemDetailContainer from './components/Shop/ItemDetailContainer'
 import Footer from './components/Footer/Footer'
 import Cart from './components/cart/Cart'
+import SuccesfulPurchaseMsg from './components/cart/SuccesfulPurchaseMsg'
 import './index.css'
 
 const CabraNegra = () => {
@@ -21,6 +22,7 @@ const CabraNegra = () => {
                     <Route path="/shop/:gender" component= {ItemListContainer} exact/>
                     <Route path="/item/:id" component={ItemDetailContainer} exact/>
                     <Route path="/cart" component={Cart} exact/>
+                    <Route path="/scssMs/:id" component={SuccesfulPurchaseMsg}/>
                 </main>
                 <Footer/>
             </BrowserRouter>
